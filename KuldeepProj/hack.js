@@ -15,6 +15,6 @@
     } catch (error) {
       console.log(error)
     }
-	  await device.close()
+	 // await device.close()
   })
 })
