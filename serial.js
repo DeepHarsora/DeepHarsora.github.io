@@ -11,7 +11,7 @@ var serial = {};
 
   serial.requestPort = function() {
     const filters = [
-      { 'vendorId': 0x8564, 'productId': 0x1000 },
+      { 'vendorId': 0x0781, 'productId': 0x5595 },
     ];
     return navigator.usb.requestDevice({ 'filters': filters }).then(
       device => new serial.Port(device)
