@@ -1,6 +1,6 @@
 console.log("Attempting to connect...");
 
-    ws = new WebSocket('ws://192.168.0.10:8001/');
+    ws = new WebSocket('ws://10.150.134.19:13000/');
 
     ws.onopen = function(msg) {
         console.log('Connection successfully opened');
