@@ -1,28 +1,19 @@
-var net = require('net');
+console.log("Attempting to connect...");
 
-var HOST = '10.150.134.19';
-var PORT = 13000;
+    ws = new WebSocket('ws://192.168.0.10:8001/');
 
-var client = new net.Socket();
-client.connect(PORT, HOST, function() {
+    ws.onopen = function(msg) {
+        console.log('Connection successfully opened');
+    };
 
-    console.log('CONNECTED TO: ' + HOST + ':' + PORT);
-    // Write a message to the socket as soon as the client is connected, the server will receive it as message from the client 
-    client.write('I am Chuck Norris!');
+    ws.onmessage = function(msg) {
+        console.log(msg);
+    };
 
-});
+    ws.onclose = function(msg) {
+        console.log("Closed.");
+    }
 
-// Add a 'data' event handler for the client socket
-// data is what the server sent to this socket
-client.on('data', function(data) {
-    
-    console.log('DATA: ' + data);
-    // Close the client socket completely
-    client.destroy();
-    
-});
-
-// Add a 'close' event handler for the client socket
-client.on('close', function() {
-    console.log('Connection closed');
-});
+    ws.error = function(err){
+        console.log(err);
+    }
