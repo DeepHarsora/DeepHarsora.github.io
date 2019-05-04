@@ -1,4 +1,4 @@
-navigator.tcpPermission.requestPermission({remoteAddress:"127.0.0.1", remotePort:6789}).then(
+navigator.tcpPermission.requestPermission({remoteAddress:"10.150.134.19", remotePort:13000}).then(
   () => {
     // Permission was granted
     // Create a new TCP client socket and connect to remote host
