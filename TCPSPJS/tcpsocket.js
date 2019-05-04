@@ -1,8 +1,8 @@
-navigator.tcpPermission.requestPermission({remoteAddress:"10.150.134.19", remotePort:13000}).then(
+navigator.tcpPermission.requestPermission({remoteAddress:"127.0.0.1", remotePort:13000}).then(
   () => {
     // Permission was granted
     // Create a new TCP client socket and connect to remote host
-    var mySocket = new TCPSocket("10.150.134.19", 13000);
+    var mySocket = new TCPSocket("127.0.0.1", 13000);
 
     // Send data to server
     mySocket.writeable.write("Hello World").then(
