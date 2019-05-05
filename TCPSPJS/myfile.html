@@ -2,14 +2,12 @@
 
 <html>
    <head>
-      
       <script type = "text/javascript">
          function WebSocketTest() {
-            
             if ("WebSocket" in window) {
                alert("WebSocket is supported by your Browser!");
                
-               // Let us open a web socket
+               // Let us open a web socket with below URI
                var ws = new WebSocket("ws://10.150.134.17:9090/");
 				
                ws.onopen = function() {
