@@ -1219,7 +1219,7 @@ jsocket.core.websocket = {
         }
         if (this.socket == null) {
             this.socket = new WebSocket('wss://' + this.api.settings.websocket.host +
-                                        ':' + this.api.settings.websocket.port + '/jsocket');
+                                        ':' + this.api.settings.websocket.port);
             this.socket.onmessage = jsocket.utils.createDelegate(this.receive, this);
             this.socket.onerror = jsocket.utils.createDelegate(this.error, this);
             this.socket.onopen = jsocket.utils.createDelegate(this.connected, this);
